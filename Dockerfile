@@ -1,2 +1,5 @@
-FROM php.7.0-apache
-COPY ./website /var/www/html
+FROM devopsedu/webapp
+ADD website /var/www/html
+RUN rm /var/www/html/index.html
+CMD apachectl -D FOREGROUND
+
